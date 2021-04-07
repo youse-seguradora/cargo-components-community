@@ -29,10 +29,9 @@ jobs:
         run: yarn build
 
       - name: Publish
-        run:
-          name: Add NPMRC
-          command: |
-            echo "@youse-seguradora:registry=https://npm.pkg.github.com/" > ~/.npmrc
-            echo "//npm.pkg.github.com/:_authToken=\"$GITHUB_TOKEN\"" >> ~/.npmrc
-            echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
-            npm set @youse-seguradora:registry=https://npm.pkg.github.com/
+        run: |
+          echo "@youse-seguradora:registry=https://npm.pkg.github.com/" > ~/.npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.CCC_TOKEN }}" >> ~/.npmrc
+          echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
+          npm set @youse-seguradora:registry=https://npm.pkg.github.com/
+          npm publish
