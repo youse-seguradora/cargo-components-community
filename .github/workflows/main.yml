@@ -1,5 +1,8 @@
-name: CI
-on: [push]
+name: Publish Pipeline (Production)
+on:
+  push:
+    branches:
+      - main
 jobs:
   build:
     name: Build and test on Node ${{ matrix.node }} and ${{ matrix.os }}
@@ -28,7 +31,7 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Publish
+      - name: Publish 🚀
         run: |
           echo "@youse-seguradora:registry=https://npm.pkg.github.com/" > ~/.npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.CCC_TOKEN }}" >> ~/.npmrc
