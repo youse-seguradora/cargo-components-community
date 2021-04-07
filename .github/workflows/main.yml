@@ -5,7 +5,7 @@ on:
       - main
 jobs:
   build:
-    name: Publish a new version - Build and test on Node v{{ matrix.node }} and ${{ matrix.os }}
+    name: Publish a new version - Build and test on Node v${{ matrix.node }} and ${{ matrix.os }}
 
     runs-on: ${{ matrix.os }}
     strategy:
