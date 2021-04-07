@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1-alpha",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -9,6 +9,9 @@
   ],
   "engines": {
     "node": ">=10"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "start": "tsdx watch",
@@ -30,7 +33,7 @@
       "pre-commit": "tsdx lint"
     }
   },
-  "name": "cargo-components-community",
+  "name": "@youse-seguradora/cargo-components-community",
   "author": "Dennis",
   "module": "dist/cargo-components-community.esm.js",
   "size-limit": [
