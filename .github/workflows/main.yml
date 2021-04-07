@@ -1,11 +1,11 @@
-name: Publish Pipeline (Production)
+name: Production
 on:
   push:
     branches:
       - main
 jobs:
   build:
-    name: Build and test on Node ${{ matrix.node }} and ${{ matrix.os }}
+    name: Publish a new version - Build and test on Node v{{ matrix.node }} and ${{ matrix.os }}
 
     runs-on: ${{ matrix.os }}
     strategy:
@@ -31,7 +31,7 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Publish 🚀
+      - name: Publish
         run: |
           echo "@youse-seguradora:registry=https://npm.pkg.github.com/" > ~/.npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.CCC_TOKEN }}" >> ~/.npmrc
